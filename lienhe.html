@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặc sản Bến Tre - Liên hệ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+  html, body {
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+}
+   /* Container nội dung chính */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex: 1; /* Chiếm hết không gian còn lại */
+  }
+
+/* Phần bên trái chứa form */
+.left {
+  flex: 1; /* Chiếm không gian còn lại */
+  min-width: 900px; /* Đảm bảo form có chiều rộng tối thiểu */
+}
+
+/* Phần bên phải chứa các box */
+.right {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các box theo chiều dọc */
+  gap: 20px; /* Khoảng cách giữa các box */
+  width: 1000px; /* Đặt chiều rộng cho phần bên phải */
+
+}
+
+/* Style cho các box */
+.box {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 10px;
+      width: 400px;
+    }
+    .box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+      background: #8e9e28;
+    }
+    .box a {
+      display: block;
+      padding: 2px 2px;
+      text-decoration: none;
+      color: #333;
+      text-align: center;
+    }
+    .box i {
+      font-size: 40px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .box p {
+      font-size: 18px;
+      font-weight: bold;
+}
+
+/* Style cho form */
+
+</style>
+</head>
+<body>
+    
+ <header>
+        <div class="menu">
+            <a href="trangchu.html">Trang chủ</a>
+            <a href="chitiet.html">Chi tiết</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </div>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+</header>
+<h1>Liên hệ</h1>
+    
+<div class="content">
+  <div class="left">
+
+<form class="contact-form validation-contact" method="post" action="send_email.php">
+    <div class="form-row">
+        <div class="contact-input">
+            <input type="text" class="form-control" id="fullname-contact" name="dataContact[fullname]" placeholder="Họ tên" required>
+        </div>
+        <div class="contact-input">
+            <input type="text" class="form-control" id="phone-contact" name="dataContact[phone]" placeholder="Số điện thoại" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="contact-input">
+            <input type="text" class="form-control" id="address-contact" name="dataContact[address]" placeholder="Địa chỉ" required>
+        </div>
+        <div class="contact-input">
+            <input type="email" class="form-control" id="email-contact" name="dataContact[email]" placeholder="Email" required>
+        </div>
+    </div>
+
+    <div class="contact-input">
+        <textarea class="form-control" id="content-contact" name="dataContact[content]" placeholder="Nội dung" required></textarea>
+    </div>
+
+    <input type="submit" class="btn btn-primary" name="submit-contact" value="Gửi">
+</form>
+</div>
+
+<div class="right">
+
+<!-- Cột 1: Trang cá nhân -->
+      <div class="column">
+        <div class="box">
+          <a href="https://www.facebook.com/profile.php?id=100053611932236" target="_blank">
+            <i class="fab fa-facebook-f" style="color:#3b5998;"></i>
+            <p>Ⓕ: Phúc Hậu</p>
+            <p>✉: hau2007abc@gmail.com</p>
+
+          </a>
+        </div>
+        <div class="box">
+          <a href="https://www.facebook.com/p/%C4%90%E1%BB%97-Th%C3%BAy-Ng%C3%A2n-100048959853043/" target="_blank">
+            <i class="fab fa-facebook-f" style="color:#3b5998;"></i>
+            <p>Ⓕ: Đỗ Thúy Ngân</p>
+            <p>✉: dtngan245@gmai.com</p>
+          </a>
+        </div>
+        <div class="box">
+          <a href="https://www.facebook.com/tran.minh.phi.745701" target="_blank">
+            <i class="fab fa-facebook-f" style="color:#3b5998;"></i>
+            <p>Ⓕ: Trần Minh Phi</p>
+                        <p>✉: tranminhphi1006@gmail.com</p>
+
+          </a>
+        </div>
+        <div class="box">
+          <a href="https://www.facebook.com/camtudayyy.2305" target="_blank">
+            <i class="fab fa-facebook-f" style="color:#3b5998;"></i>
+            <p>Ⓕ: Cẩm Tú</p>
+                        <p>✉: camtu2305@gmail.com</p>
+
+          </a>
+        </div>
+      </div>
+  </div>
+</div>
+
+<footer>
+    <p>&copy; <span id="year"></span> Nhóm 8 - 12A1. Mọi quyền được bảo lưu.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
