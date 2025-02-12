@@ -98,4 +98,3 @@ function shareOnWhatsApp() {
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(url)}`;
     window.open(whatsappUrl, '_blank', 'width=600,height=400');
 }
-
