@@ -63,8 +63,62 @@
       font-size: 18px;
       font-weight: bold;
 }
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Chuyển từ ngang sang dọc */
+        align-items: center; /* Căn giữa nội dung */
+        gap: 20px; /* Giảm khoảng cách giữa các phần */
+    }
 
-/* Style cho form */
+    .left {
+        min-width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+    }
+
+    .right {
+        width: 100%; /* Chiếm toàn bộ màn hình để không bị tràn */
+        align-items: center; /* Căn giữa các box */
+    }
+
+    .box {
+        width: 90%; /* Đảm bảo các box không quá lớn */
+    }
+}
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: #8e9e28;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #367517;
+}
+
+
+
 
 </style>
 </head>
@@ -85,31 +139,18 @@
 <div class="content">
   <div class="left">
 
-<form class="contact-form validation-contact" method="post" action="send_email.php">
-    <div class="form-row">
-        <div class="contact-input">
-            <input type="text" class="form-control" id="fullname-contact" name="dataContact[fullname]" placeholder="Họ tên" required>
-        </div>
-        <div class="contact-input">
-            <input type="text" class="form-control" id="phone-contact" name="dataContact[phone]" placeholder="Số điện thoại" required>
-        </div>
-    </div>
+<form action="https://formsubmit.co/dtngan245@gmail.com" method="POST" class="contact-form">
+    <input type="text" name="fullname" placeholder="Họ tên" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="phone" placeholder="Số điện thoại" required>
+    <textarea name="message" placeholder="Nội dung" required></textarea>
 
-    <div class="form-row">
-        <div class="contact-input">
-            <input type="text" class="form-control" id="address-contact" name="dataContact[address]" placeholder="Địa chỉ" required>
-        </div>
-        <div class="contact-input">
-            <input type="email" class="form-control" id="email-contact" name="dataContact[email]" placeholder="Email" required>
-        </div>
-    </div>
+    <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+    <input type="hidden" name="_captcha" value="false">
 
-    <div class="contact-input">
-        <textarea class="form-control" id="content-contact" name="dataContact[content]" placeholder="Nội dung" required></textarea>
-    </div>
-
-    <input type="submit" class="btn btn-primary" name="submit-contact" value="Gửi">
+    <button type="submit">Gửi liên hệ</button>
 </form>
+
 </div>
 
 <div class="right">
@@ -158,4 +199,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
