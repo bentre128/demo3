@@ -17,14 +17,27 @@ header {
     left: 0;
     background-color: #18470F;
     z-index: 1000;
-    height: 100px;
+    height: 90px;
 }
+@media screen and (max-width: 768px) {
+    header {
+        height: 60px; /* Giảm chiều cao header */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        height: 55px; /* Giảm hơn nữa trên điện thoại nhỏ */
+    }
+}
+
+
+
 .menu {
     text-align: center; /* Căn giữa nội dung trong thanh điều hướng */
-    padding: 35px; /* Khoảng cách trên và dưới của thanh điều hướng */
+    padding: 30px; /* Khoảng cách trên và dưới của thanh điều hướng */
     width: 100%; /* Đảm bảo thanh điều hướng dài bằng màn hình */
     position: fixed;
-    top: 50;
  }
 .menu a {
     text-decoration: none; /* Loại bỏ gạch chân mặc định của liên kết */
@@ -37,18 +50,45 @@ header {
     text-decoration: underline; /* Khi di chuột lên liên kết, sẽ có gạch chân */
     text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
 }
+@media screen and (max-width: 768px) {
+    .menu {
+        padding: 21px 0; /* Giảm padding cho phù hợp */
+    }
+
+    .menu a {
+        margin: 0 8px; /* Giảm khoảng cách giữa các mục */
+        font-size: 16px; /* Giảm kích thước chữ */
+    }
+}
+
+
 
 
 h1 {
-    font-size: 60px; /* Tăng kích thước chữ */
+    font-size: 40px; /* Tăng kích thước chữ */
     font-weight: bold;
     text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 80px;
+}
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 28px; /* Giảm kích thước chữ trên màn hình nhỏ */
+        padding-top: 50px; /* Giảm khoảng cách trên để tránh bị lệch */
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff; /* Giảm hiệu ứng đổ bóng */
+    }
 }
 
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 22px; /* Giảm hơn nữa trên màn hình siêu nhỏ */
+        padding-top: 30px;
+    }
+}
+
+
 .gradient-text {
-    background: linear-gradient(90deg,#FFFFCC, #FFFF66, #CCFF33);
+    background: linear-gradient(90deg,#FFE920, #C8B400, #367517);
     background-size: 300%; color: transparent;
     -webkit-background-clip: text;
     animation: gradient-move 3s infinite;}
@@ -61,13 +101,30 @@ h1 {
     height: 70px; /* Chiều cao tự động thay đổi theo tỷ lệ của hình ảnh */
     flex-shrink: 0; /* Không cho logo bị thu nhỏ nếu không gian hạn chế */
     padding: 10px 70px;
+    position: relative;
+    z-index: 1010;
 }
 .logo img {
     width: 100%; /* Đảm bảo logo chiếm toàn bộ chiều rộng khung */
     height: auto; /* Tự động điều chỉnh chiều cao theo tỷ lệ */
     border-radius: 50%; /* Bo tròn ảnh với bán kính 50% để tạo thành hình tròn */
     box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+    display: block;
 } 
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 50px; /* Giảm kích thước logo */
+        height: 50px;
+        padding: 5px 10px; /* Giảm khoảng cách padding để tránh bị tràn */
+    }
+
+    .logo img {
+        box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff; /* Giảm hiệu ứng đổ bóng */
+    }
+}
+
+
+
 .background-video {
     position: fixed;
     top: 0;
@@ -77,6 +134,35 @@ h1 {
     object-fit: cover; /* Đảm bảo video luôn phủ đầy màn hình */
     z-index: -1; /* Đưa video ra sau nội dung */
 }
+/* Ẩn video trên màn hình nhỏ hơn hoặc bằng 768px (tablet & điện thoại) */
+@media screen and (max-width: 768px) {
+    .background-video {
+        display: none; /* Hoặc visibility: hidden; */
+    }
+}
+
+
+/* Khi màn hình nhỏ hơn hoặc bằng 480px (điện thoại nhỏ) */
+@media screen and (max-width: 480px) {
+    .background-video {
+        display: none; /* Hoặc visibility: hidden; */
+    }
+}
+
+
+.khung-van-ban {
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.7); /* Nền đen trong suốt */
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative; /* Đặt vị trí tuyệt đối để căn giữa */
+    margin: 0 auto;
+    width: 100%; /* Thay vì cố định 1400px */
+    max-width: 1400px; /* Giới hạn tối đa */
+ }
+
 
 .container{
     width: 95%;
@@ -88,11 +174,7 @@ h1 {
     margin-top: 50px;
 
 }
-@media (max-width: 768px) {
-    .container li {
-        flex: 0 1 180px; /* Tăng kích thước ảnh */
-    }
-}
+
 .container li{
     position: relative;
     overflow: hidden;
@@ -179,19 +261,24 @@ h1 {
     opacity: 1;
     visibility: visible; 
 }
-.khung-van-ban {
-    padding: 5px;
-    background: rgba(53, 53, 53, 0.7); /* Nền đen trong suốt */
-    border: 2px solid white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    position: relative; /* Đặt vị trí tuyệt đối để căn giữa */
-    margin: 0 auto;
-    width: 100%; /* Thay vì cố định 1400px */
-    max-width: 1400px; /* Giới hạn tối đa */
-    color: white;
- }
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Xếp danh sách theo chiều dọc */
+        align-items: center; /* Căn giữa các phần tử */
+        height: auto; /* Không giới hạn chiều cao */
+    }
+
+    .container li {
+        width: 90%; /* Để mỗi item chiếm gần hết chiều rộng */
+        flex: none; /* Không co giãn nữa */
+    }
+
+    .container li:hover {
+        flex: none; /* Loại bỏ hiệu ứng phóng to */
+        scale: 1; /* Tránh bị lệch bố cục */
+    }
+}
+
 
  .btn {
     width: 9em;
@@ -271,6 +358,30 @@ html {
     text-decoration: underline; /* Khi di chuột lên liên kết, sẽ có gạch chân */
 
 }
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 50px; /* Sidebar thu nhỏ thành thanh dọc */
+        overflow: hidden;
+        transition: 0.3s;
+        padding: 100px 0;
+    }
+
+    .sidebar:hover {
+        width: 220px; /* Khi di chuột vào, sidebar mở rộng */
+        padding: 100px 10px;
+    }
+
+    .sidebar ul {
+        display: none; /* Ẩn menu mặc định */
+    }
+
+    .sidebar:hover ul {
+        display: block; /* Hiện menu khi hover */
+    }
+}
+
+
+
 @media (max-width: 768px) {
     .sidebar {
         width: 0;
@@ -278,7 +389,7 @@ html {
         overflow: hidden;
     }
     content {
-        margin-left: 0;
+        margin-left: 5px;
     }
 }
 
@@ -310,6 +421,17 @@ content {
             transform: scale(1.1); /* Hiệu ứng phóng to khi hover */
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Hiệu ứng đổ bóng sáng */
 }
+/* Trên màn hình nhỏ, zoom ít hơn */
+@media screen and (max-width: 768px) {
+    .zoom-container img {
+        max-width: 90%; /* Giảm kích thước ảnh */
+    }
+
+    .zoom-container:hover img {
+        transform: scale(1.05); /* Chỉ zoom 5% thay vì 10% */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Đổ bóng nhẹ hơn */
+    }
+}
         
 
 .comment-section {
@@ -323,12 +445,7 @@ content {
     text-align: center;
     color: white;
 }
-@media (max-width: 768px) {
-    .contact-input input,
-    .contact-input textarea {
-        width: 100%;
-    }
-}
+
 .comment-section input,
 .comment-section textarea {
     width: 100%;
@@ -381,6 +498,29 @@ content {
     font-weight: bold;
     color: #8e9e28;
 }
+@media screen and (max-width: 768px) {
+    .comment-section {
+        width: 95%; /* Chiếm phần lớn màn hình nhưng không tràn mép */
+        padding: 10px; /* Giảm padding */
+        font-size: 14px; /* Giảm kích thước chữ */
+    }
+
+    .comment-section input,
+    .comment-section textarea {
+        font-size: 14px; /* Chữ nhỏ hơn */
+        padding: 8px; /* Thu nhỏ padding */
+    }
+
+    .comment-section button {
+        padding: 6px 12px; /* Nút nhỏ hơn */
+        font-size: 14px; /* Giảm chữ nút */
+    }
+
+    #commentList li {
+        padding: 8px; /* Giảm khoảng cách giữa các bình luận */
+        font-size: 14px;
+    }
+}
 
 .delete-btn {
     margin-left: 10px;
@@ -396,6 +536,15 @@ content {
 .delete-btn:hover {
     background-color: #367517;
 }
+@media screen and (max-width: 768px) {
+    .delete-btn {
+        margin-left: 5px; /* Giảm khoảng cách lề */
+        padding: 3px 8px; /* Giảm kích thước nút */
+        font-size: 12px; /* Chữ nhỏ hơn */
+    }
+}
+
+
 
 footer {
     text-align: center;
@@ -484,7 +633,7 @@ footer p {
     background: #8e9e28;
 }
 
-
+/*
 .share-buttons {
     display: flex;
     gap: 10px;
@@ -501,8 +650,20 @@ footer p {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+@media screen and (max-width: 768px) {
+    .share-buttons {
+        gap: 5px; /* Giảm khoảng cách giữa các nút */
+    }
 
-.facebook {
+   /* .share-btn {
+        padding: 6px 12px; /* Giảm kích thước nút */
+      /*  font-size: 14px; /* Chữ nhỏ hơn */
+    }
+}
+
+
+
+/*.facebook {
     background-color: #3b5998;
 }
 
@@ -524,9 +685,4 @@ footer p {
 
 .whatsapp:hover {
     background-color: #128c7e;
-}
-@media (max-width: 768px) {
-    .zoom-container img:hover {
-        transform: scale(1.05); /* Giảm zoom */
-    }
 }
