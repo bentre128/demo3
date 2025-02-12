@@ -69,7 +69,7 @@ h1 {
     font-weight: bold;
     text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 100px;
 }
 @media screen and (max-width: 768px) {
     h1 {
@@ -97,8 +97,8 @@ h1 {
 
 
 .logo {
-    width: 70px; /* Đặt kích thước cố định cho logo (chiều rộng) */
-    height: 70px; /* Chiều cao tự động thay đổi theo tỷ lệ của hình ảnh */
+    width: 60px; /* Đặt kích thước cố định cho logo (chiều rộng) */
+    height: 60px; /* Chiều cao tự động thay đổi theo tỷ lệ của hình ảnh */
     flex-shrink: 0; /* Không cho logo bị thu nhỏ nếu không gian hạn chế */
     padding: 10px 70px;
     position: relative;
